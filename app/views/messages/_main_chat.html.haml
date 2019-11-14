@@ -1,0 +1,32 @@
+.chat_main
+  .main_header
+    .main_header_left-box
+      .main_header_left-box__current-group
+        group name
+      .main_header_left-box__member-list
+        Member :
+        
+    =link_to "" do
+      .main_header__btn-edit
+        Edit
+  .contents_wrapper
+    .contents_wrapper_message
+      .contents_wrapper_message_nest
+        .contents_wrapper_message_nest__group-name
+          tomoya
+        .contents_wrapper_message_nest-time
+          日時
+      .contents_wrapper__message_1
+        this is a first message
+  .form
+    %form{class: "new-message"}
+      .input-box
+        %input{class: "input-box__text",placeholder: "type a message"}
+
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file" ,class: "input-box__image__file"}
+
+      %input.submit-btn{name:"commit",type: "subit",value: "Send"  }
+      
+        
