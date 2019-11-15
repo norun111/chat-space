@@ -1,13 +1,15 @@
 .chat_side
   .side-header
     .side-header_box
-      .side-header_box_name
-        Tomoya
-      .side-header_box_btns
-        .side-header_box_btns_edit
-          =icon('fas', 'edit')
-        .side-header_box_btns_new-group
-          =icon('fas', 'cog')
+      %h3.side-header_box_name
+        = current_user.name
+      %ul.side-header_box_btns
+        %li.side-header_box_btns_edit
+          =link_to do
+            =icon('fas', 'edit')
+        %li.side-header_box_btns_new-group
+          =link_to edit_user_path(current_user) do
+            =icon('fas', 'cog')
   .contents
     .contents_message1
       %h1 test1

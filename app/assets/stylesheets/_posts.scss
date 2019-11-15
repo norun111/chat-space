@@ -21,10 +21,16 @@
         }
         &_btns{
           display: flex;
-          &_new-group{
-            margin-left: 0.3rem;
-          }
           &_edit{
+            margin-left: 0.3rem;
+            .fa-edit{
+              color: white;
+            }
+          }
+          &_new-group{
+            .fa-cog{
+              color: white;
+            }
             margin-left: 0.3rem;
           }
         }
