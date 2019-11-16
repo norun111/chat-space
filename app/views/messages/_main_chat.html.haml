@@ -2,31 +2,24 @@
   .main_header
     .main_header_left-box
       .main_header_left-box__current-group
-        group name
+        = @group.name
       .main_header_left-box__member-list
         Member :
+        - @users.each do |user|
+          = user.name
         
-    =link_to "" do
+        
+    =link_to edit_group_path(@group) do
       .main_header__btn-edit
         Edit
   .contents_wrapper
-    .contents_wrapper_message
-      .contents_wrapper_message_nest
-        .contents_wrapper_message_nest__group-name
-          tomoya
-        .contents_wrapper_message_nest-time
-          日時
-      .contents_wrapper__message_1
-        this is a first message
+    = render @messages
   .form
-    %form{class: "new-message"}
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{class: "input-box__text",placeholder: "type a message"}
-
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file" ,class: "input-box__image__file"}
-
-      %input.submit-btn{name:"commit",type: "subit",value: "Send"  }
-      
-        
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
+          
