@@ -1,0 +1,11 @@
+.contents_wrapper_message
+  .contents_wrapper_message_nest
+    .contents_wrapper_message_nest__group-name
+      = message.user.name
+    .contents_wrapper_message_nest-time
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .contents_wrapper__message_1
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

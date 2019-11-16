@@ -38,24 +38,28 @@
     }
   }
   $var: 99px;
-  .contents{
+  .groups{
     height: calc( 100vh - #{$var});
     color: #FFFFFF;
     background-color: #2f3e51;
     padding: 20px 20px 0 20px;
     overflow: scroll;
     box-sizing: border-box;
-    &_message1{
-      h1{
+    .group{
+      &__name{
         font-size: 15px;
-        
+        color: white;
+        text-decoration: none;
+
       }
-      p{
-        font-size: 11px;
-        
+      &__message{
+          font-size: 11px;
+          color: white;
+          text-decoration: none;
       }  
     }
-  }
+  }  
+
   .chat_main{
     width: calc(100vw - 300px);
     float: left;
@@ -114,7 +118,7 @@
             line-height: 24px;
           }
         }  
-        &__message{
+        &__message_1{
           margin-bottom: 10px;
           font-size: 14px;
           color: #434A54;
@@ -126,7 +130,7 @@
       padding: 20px 40px;
       background-color: #ddd;
       box-sizing: border-box;
-      .new-message{
+      .new_message{
         display: flex;
         .input-box{
           position: relative;
