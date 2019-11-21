@@ -98,6 +98,7 @@
       }
     }
     .contents_wrapper{
+      overflow: scroll;
       background-color: #fafafa;
       height: calc(100vh - 282px);
       padding:46px 40px;
