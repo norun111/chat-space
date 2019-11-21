@@ -3,28 +3,27 @@ $(function(){
     var image_if = message.image ? `<img class="lower-message__image" src="${message.image}" alt=""></img>` : ''
     
     var html = `<div class="contents_wrapper_message">
-    <div class="contents_wrapper_message_nest">
-    <div class="contents_wrapper_message_nest__group-name">
-    ${message.name}
-    </div>
-    <div class="contents_wrapper_message_nest-time">
-    ${message.created_at}
-    </div>
-    </div>
-    <div class="contents_wrapper__message_1">
-    <p class="lower-message__content">
-    ${message.content}
-    </p>
-    ${image_if}
-    </div>
-    </div>`
+                <div class="contents_wrapper_message_nest">
+                <div class="contents_wrapper_message_nest__group-name">
+                  ${message.name}
+                </div>
+                <div class="contents_wrapper_message_nest-time">
+                  ${message.created_at}
+                </div>
+                </div>
+                <div class="contents_wrapper__message_1">
+                <p class="lower-message__content">
+                  ${message.content}
+                </p>
+                  ${image_if}
+                </div>
+                </div>`
     return html;
   }
   
   $('.new_message').on("submit",function(e){
     e.preventDefault();
     var formData = new FormData(this)
-    // var url = $(this).attr('action');
     const result = $('.chat_main').data('group-id');
     
     $.ajax({
