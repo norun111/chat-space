@@ -19,7 +19,7 @@ $(function(){
       $('.contents_wrapper').animate({scrollTop : $('.contents_wrapper')[0].scrollHeight });
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
     }
   }
