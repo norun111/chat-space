@@ -4,7 +4,6 @@ $(function(){
     group_id = $('.chat_main').data('group-id');
     if (url == `http://localhost:3000/groups/${group_id}/messages`){
     last_message_id = $('.contents_wrapper_message:last').data('message-id');
-    console.log(last_message_id);
     $.ajax({
       url: 'api/messages', 
       type: 'GET',
