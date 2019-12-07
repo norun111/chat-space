@@ -25,7 +25,7 @@ $(function(){
   }
     
   function buildMessage(message){
-    var image_if = message.image ? `<img class="lower-message__image" src="${message.image}" alt=""></img>` : ''
+    var image_if = message.image ? `<img class="lower-message__image" src="${message.image}" >` : ''
 
     var html = `<div class="contents_wrapper_message" data-message-id="${message.id}">
                 <div class="contents_wrapper_message_nest">
