@@ -1,11 +1,11 @@
 $(function(){
   var reloadMessages = function() {
-    var url = location.href
+    // var url = location.pathname
     group_id = $('.chat_main').data('group-id');
-    if (url == `http://localhost:3000/groups/${group_id}/messages`){
+    if(location.pathname.match(`/\/groups\/[0-9]+\/messages/`)){
     last_message_id = $('.contents_wrapper_message:last').data('message-id');
     $.ajax({
-      url: 'api/messages', 
+      url: 'api/messages',
       type: 'GET',
       dataType: 'json',
       data: {id: last_message_id}
