@@ -2,7 +2,7 @@ $(function(){
   var reloadMessages = function() {
     // var url = location.pathname
     group_id = $('.chat_main').data('group-id');
-    if(location.pathname.match(`/\/groups\/[0-9]+\/messages/`)){
+    if(location.pathname.match(/\/groups\/[0-9]+\/messages/)){
     last_message_id = $('.contents_wrapper_message:last').data('message-id');
     $.ajax({
       url: 'api/messages',
